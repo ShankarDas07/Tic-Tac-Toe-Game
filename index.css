@@ -1,0 +1,171 @@
+/* RESET */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body{
+    background: linear-gradient(to right,#C3A6E8,#9FAAEF,#7DA9E8);
+    font-family: Arial, sans-serif;
+}
+
+/* MAIN LAYOUT */
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 20px;
+    min-height: 100vh;
+    flex-wrap: wrap;
+}
+
+/* PLAYER BOX */
+.player-box{
+    position: relative;
+    width: 200px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* PLAYER IMAGE */
+.xx1,.oo1{
+    width: 260px;
+    height: 260px;
+    transition: transform 0.4s ease;
+}
+
+.active-player{
+    transform: scale(1.3);
+}
+
+/* PLAYER TEXT */
+.tex{
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 28px;
+    color: white;
+    background: rgba(0,0,0,0.6);
+    padding: 8px 18px;
+    border-radius: 20px;
+    z-index: 5;
+    white-space: nowrap;   /* ⭐ key line */
+}
+
+
+
+/* GAME CONTAINER */
+.contaner{
+    background: rgb(229, 172, 172);
+    border-radius: 40px;
+    padding: 20px;
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* TITLE */
+.name{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* BOARD */
+.board{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 12px;
+    width: 100%;
+    max-width: 320px;
+    margin: 15px 0;
+}
+
+/* CHILD BOX */
+.child{
+    width: 100%;
+    aspect-ratio: 1 / 1;   /* ⭐ perfect square */
+    font-size: 3rem;
+    font-weight: bold;
+    border-radius: 12px;
+    border: 3px solid rgb(204,179,179);
+    background: rgb(217,237,255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.child:hover{
+    background: #fff;
+    border: 3px dashed #111;
+}
+
+/* BUTTON */
+.but{
+    padding: 10px 24px;
+    font-size: 18px;
+    border-radius: 20px;
+    border: 2px solid #000;
+    background: rgb(14,196,1);
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* MESSAGE */
+#WinMassage{
+    font-size: 24px;
+    margin-top: 12px;
+    font-style: italic;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 600px){
+    .main{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .player-box{
+        width: 100%;
+        height: auto;
+    }
+
+    .xx1,.oo1{
+        width: 180px;
+        height: 180px;
+    }
+
+    .tex{
+        top: -40px;      /* mobile head height অনুযায়ী */
+        font-size: 22px;
+    }
+
+    .name{
+        font-size: 30px;
+    }
+
+    .child{
+        font-size: 2.4rem;
+    }
+}
+
+/* 📱 TABLET */
+@media (max-width: 900px){
+    .xx1,.oo1{
+        width: 220px;
+        height: 220px;
+    }
+
+    .tex{
+        font-size: 24px;
+    }
+}
